@@ -1,0 +1,9 @@
+com\habitgame\HabitGameApplication.class
+com\habitgame\service\HabitService.class
+com\habitgame\entity\Habit$Frequency.class
+com\habitgame\entity\Habit.class
+com\habitgame\entity\User.class
+com\habitgame\entity\Habit$Difficulty.class
+com\habitgame\controller\HabitController.class
+com\habitgame\repository\HabitRepository.class
+com\habitgame\repository\UserRepository.class
