@@ -1,0 +1,19 @@
+You are a senior software architect.
+
+Design a clean Spring Boot backend for a gamified habit tracker.
+
+Requirements:
+- User system
+- Task system
+- XP system
+- PostgreSQL
+- REST APIsL
+- Clean layered architecture
+
+Output:
+- Folder structure
+- Database schema
+- API endpoints
+- Setup instructions
+
+Keep it simple and production-ready.

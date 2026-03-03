@@ -1,7 +1,15 @@
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\service\HabitService.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\controller\AuthController.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\dto\LoginRequest.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\service\AuthService.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\entity\Habit.java
-D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\entity\User.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\HabitGameApplication.java
-D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\controller\HabitController.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\dto\RegisterRequest.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\repository\HabitRepository.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\repository\UserRepository.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\dto\AuthResponse.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\config\JwtAuthFilter.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\config\SecurityConfig.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\entity\User.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\controller\HabitController.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\config\JwtUtil.java

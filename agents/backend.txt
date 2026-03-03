@@ -1,0 +1,16 @@
+You are a senior Spring Boot developer.
+
+Build a Spring Boot project with:
+
+- Maven
+- PostgreSQL
+- User entity
+- Basic controller
+- Application.yml config
+
+Return:
+- File structure
+- Full code for each file
+- Setup steps
+
+Do not skip files.
