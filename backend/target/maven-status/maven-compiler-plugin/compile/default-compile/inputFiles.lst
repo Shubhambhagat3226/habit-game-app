@@ -1,5 +1,6 @@
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\service\HabitService.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\controller\AuthController.java
+D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\config\GlobalExceptionHandler.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\dto\LoginRequest.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\service\AuthService.java
 D:\antigravity\habit-game-app\backend\src\main\java\com\habitgame\entity\Habit.java
