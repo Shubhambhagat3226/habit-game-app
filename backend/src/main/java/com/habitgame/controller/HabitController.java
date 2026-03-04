@@ -1,5 +1,6 @@
 package com.habitgame.controller;
 
+import com.habitgame.dto.HabitResponseDTO;
 import com.habitgame.entity.Habit;
 import com.habitgame.service.HabitService;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,13 @@ public class HabitController {
         this.habitService = habitService;
     }
 
+    @PostMapping
+    public ResponseEntity<HabitResponseDTO> createHabit(@RequestBody Habit habit) {
+        return ResponseEntity.ok(new HabitResponseDTO(habitService.createHabit(habit)));
+    }
+
     @PostMapping("/{id}/complete")
-    public ResponseEntity<Habit> completeHabit(@PathVariable UUID id) {
-        return ResponseEntity.ok(habitService.completeHabit(id));
+    public ResponseEntity<HabitResponseDTO> completeHabit(@PathVariable UUID id) {
+        return ResponseEntity.ok(new HabitResponseDTO(habitService.completeHabit(id)));
     }
 }

@@ -27,6 +27,15 @@ public class User {
     @Column(nullable = false)
     private Integer level = 1;
 
+    @Column(nullable = false)
+    private Integer currentStreak = 0;
+
+    @Column(nullable = false)
+    private Integer longestStreak = 0;
+
+    @Column
+    private java.time.LocalDate lastActionDate;
+
     public User() {
     }
 
@@ -84,6 +93,30 @@ public class User {
 
     public void setLevel(Integer level) {
         this.level = level;
+    }
+
+    public Integer getCurrentStreak() {
+        return currentStreak;
+    }
+
+    public void setCurrentStreak(Integer currentStreak) {
+        this.currentStreak = currentStreak;
+    }
+
+    public Integer getLongestStreak() {
+        return longestStreak;
+    }
+
+    public void setLongestStreak(Integer longestStreak) {
+        this.longestStreak = longestStreak;
+    }
+
+    public java.time.LocalDate getLastActionDate() {
+        return lastActionDate;
+    }
+
+    public void setLastActionDate(java.time.LocalDate lastActionDate) {
+        this.lastActionDate = lastActionDate;
     }
 
     public void addXp(int amount) {

@@ -31,7 +31,7 @@ public class Habit {
     private LocalDateTime lastCompleted;
 
     public enum Difficulty {
-        EASY(10), MEDIUM(25), HARD(50);
+        EASY(10), MEDIUM(20), HARD(30);
 
         private final int xpReward;
 

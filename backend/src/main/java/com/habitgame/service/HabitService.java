@@ -17,10 +17,13 @@ import java.util.UUID;
 public class HabitService {
     private final HabitRepository habitRepository;
     private final UserRepository userRepository;
+    private final GamificationService gamificationService;
 
-    public HabitService(HabitRepository habitRepository, UserRepository userRepository) {
+    public HabitService(HabitRepository habitRepository, UserRepository userRepository,
+            GamificationService gamificationService) {
         this.habitRepository = habitRepository;
         this.userRepository = userRepository;
+        this.gamificationService = gamificationService;
     }
 
     public List<Habit> getHabitsByUser(User user) {
@@ -28,6 +31,10 @@ public class HabitService {
     }
 
     public Habit createHabit(Habit habit) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        habit.setUser(user);
         return habitRepository.save(habit);
     }
 
@@ -39,13 +46,14 @@ public class HabitService {
         Habit habit = habitRepository.findById(habitId)
                 .orElseThrow(() -> new RuntimeException("Habit not found"));
 
-        // Ownership check: user can only complete their own habits
+        // Ownership check
         User user = habit.getUser();
+        System.out.println("DEBUG: Auth User=" + authenticatedUsername + ", Habit Owner=" + user.getUsername());
         if (!user.getUsername().equals(authenticatedUsername)) {
             throw new RuntimeException("Access denied: you do not own this habit");
         }
 
-        // Daily completion guard: prevent completing same habit twice in one day
+        // Daily completion guard
         if (habit.getLastCompleted() != null) {
             LocalDate lastDate = habit.getLastCompleted().toLocalDate();
             if (lastDate.equals(LocalDate.now())) {
@@ -55,9 +63,9 @@ public class HabitService {
 
         habit.setLastCompleted(LocalDateTime.now());
 
-        user.addXp(habit.getDifficulty().getXpReward());
+        // Delegate gamification logic
+        gamificationService.addProgress(user, habit.getDifficulty().getXpReward());
 
-        userRepository.save(user);
         return habitRepository.save(habit);
     }
 }
